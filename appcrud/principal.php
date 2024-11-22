@@ -1,4 +1,8 @@
-<?php include 'principal_controller.php'; ?>
+<?php include 'principal_controller.php';?>
+
+<?php include 'produto_controller.php';
+$prod = getProdutos();
+?>
 <?php include 'header.php'; ?>
 
 <div class="flex-grow-1">

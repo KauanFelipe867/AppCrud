@@ -12,6 +12,13 @@ if (!isset($_SESSION['email'])) {
 $nome = $_SESSION['nome'];
 $email = $_SESSION['email'];
 
+//Função para obter todos os produtos
+function getProds() {
+    global $conn;
+    $result = $conn->query("SELECT * FROM produtos");
+    return $result->fetch_all(MYSQLI_ASSOC);
+}
+
 // Função para lidar com o logout
 if (isset($_POST['logout'])) {
     session_unset();
