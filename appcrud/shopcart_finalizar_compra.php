@@ -12,17 +12,17 @@ include 'shopcart_controller.php';
 
 ?>
 
-<?php include 'header.php'; ?>
+<?php include 'navbar.php'; ?>
 
 <div class="container p-2">
-    <h4>FinalizaÃ§Ã£o da Compra - Resumo do Pedido</h4>
+    <h4 class="my-4">Finalização da Compra - Resumo do Pedido</h4>
     <?php if (isset($_SESSION['carrinho']) && count($_SESSION['carrinho']) > 0): ?>
         <table class="table table-bordered table-warning table-striped table-hover table-sm">
             <thead class="table-dark">
                 <tr>
                     <th>Produto</th>
                     <th>Quantidade</th>
-                    <th>PreÃ§o</th>
+                    <th>Preço</th>
                     <th>Subtotal</th>
                 </tr>
             </thead>
@@ -47,9 +47,9 @@ include 'shopcart_controller.php';
         </form>
 
     <?php else: ?>
-        <p>Seu carrinho estÃ¡ vazio.</p>
+        <p>Seu carrinho está vazio.</p>
         <a href="principal.php" class="btn btn-primary">Voltar para os Produtos</a>
     <?php endif; ?>
 </div>
 
-<?php include 'footer.php'; ?>
+<?php include 'footer2principal.php'; ?>

@@ -101,6 +101,7 @@ if (isset($_GET['edit'])) {
                 <th class="table-primary">Categoria</th>
                 <th class="table-primary">Url_img</th>
                 <th class="table-primary">Ativo</th>
+                <th class="table-primary">Ações</th>
             </tr>
             <!--Faz um loop FOR no resultset de usuários e preenche a tabela-->
             <?php foreach ($prods as $prod): ?>
@@ -114,6 +115,7 @@ if (isset($_GET['edit'])) {
                     <td><?php echo $prod['categoria']; ?></td>
                     <td><?php echo $prod['url_img']; ?></td>
                     <td><?php echo $prod['ativo']; ?></td>
+                    <td>
                         <a href="?edit=<?php echo $prod['id']; ?>">Editar</a>
                         <a href="?delete=<?php echo $prod['id']; ?>" onclick="return confirm('Tem certeza que deseja excluir?');">Excluir</a>
                     </td>

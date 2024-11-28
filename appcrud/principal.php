@@ -9,11 +9,11 @@ $produtos = getProdutos();
 
 <div class="flex-grow-1">
         <!-- Conteúdo da página vai aqui -->
-        <h2>Olá, <?php echo htmlspecialchars($nome); ?>!</h2>
+        <h2 class="mx-5 my-4">Olá, <?php echo htmlspecialchars($nome); ?>!</h2>
 
-        <form method="POST" action="">
+        <!--<form method="POST" action="">
             <input type="submit" name="logout" value="Logout">
-        </form>
+        </form>-->
     </div>
 
 <div class="container">
@@ -27,12 +27,12 @@ $produtos = getProdutos();
 </div>
 <div class="container p-2">
     <?php foreach ($produtos as $produto): ?>    
-        <div class="card  float-left" style="width: 18rem;">
-            <img src="<?php echo $produto['url_img']; ?>" class="rounded mx-auto d-block" alt="Imagem do Produto" style="width: 100px;">
+        <div class="card  float-left mx-4" style="width: 18rem;">
+            <img src="<?php echo $produto['url_img']; ?>" class="rounded mx-auto d-block mt-3" alt="Imagem do Produto" style="width: 100px;">
             <div class="card-body">
                 <h5 class="card-title"><?php echo $produto['nome']; ?></h5>
                 <p class="card-text"><?php echo $produto['descricao']; ?></p>
-                <p><strong>PreÃ§o:</strong> R$ <?php echo number_format($produto['valorunitario'], 2, ',', '.'); ?></p>
+                <p><strong>Preço:</strong> R$ <?php echo number_format($produto['valorunitario'], 2, ',', '.'); ?></p>
                 <!-- FormulÃ¡rio para adicionar ao carrinho -->
                 <form method="POST" action="principal.php">
                     <input type="hidden" name="id_produto" value="<?php echo $produto['id']; ?>">
@@ -43,4 +43,4 @@ $produtos = getProdutos();
     <?php endforeach; ?>
 </div>
 
-<?php include 'footer.php'; ?>
+<?php include 'footer2principal.php'; ?>

@@ -6,7 +6,7 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
    
-     <footer class="p-4 bg-success text-light text-center sticky-bottom rounded">
+     <footer class="p-4 bg-success text-light text-center fixed-bottom rounded">
           <p class="mb-0">&copy; <?php echo date("Y"); ?> Seu Nome ou Empresa. Todos os direitos reservados.</p>
      </footer>
    

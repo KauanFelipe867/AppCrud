@@ -22,9 +22,9 @@ include 'shopcart_controller.php';
                 <tr>
                     <th>Produto</th>
                     <th>Quantidade</th>
-                    <th>PreÃ§o</th>
+                    <th>Preço</th>
                     <th>Subtotal</th>
-                    <th>AÃ§Ãµes</th>
+                    <th>Opções</th>
                 </tr>
             </thead>
             <tbody>
@@ -49,11 +49,11 @@ include 'shopcart_controller.php';
         <h3>Total: R$ <?php echo number_format(calcularTotalCarrinho(), 2, ',', '.'); ?></h3>
 
         <a href="shopcart_finalizar_compra.php" class="btn btn-success">Confirmar Compra</a>
-        <a href="principal.php" class="btn btn-primary">Continuar Compra</a>
+        <a href="principal.php" class="btn btn-primary">Continuar Comprando</a>
     <?php else: ?>
-        <p>Seu carrinho estÃ¡ vazio.</p>
+        <p>Seu carrinho está¡ vazio.</p>
         <a href="principal.php" class="btn btn-primary">Voltar</a>
     <?php endif; ?>
 </div>
 
-<?php include 'footer2.php'; ?>
+<?php include 'footer2principal.php'; ?>

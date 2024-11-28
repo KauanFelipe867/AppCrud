@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'header.php';
+include 'navbar.php';
 ?>
 
 <div class="container p-2">
@@ -9,4 +9,4 @@ include 'header.php';
     <a href="principal.php" class="btn btn-primary">Voltar para a Loja</a>
 </div>
 
-<?php include 'footer.php'; ?>
+<?php include 'footer2principal.php'; ?>

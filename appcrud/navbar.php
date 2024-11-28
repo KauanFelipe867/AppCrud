@@ -5,6 +5,7 @@
     <title>Página Principal</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>  
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
       
@@ -24,14 +25,24 @@
             </div>
         </div>
         <div class="collapse navbar-collapse" id="menuNavbar">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <form method="POST" action="">
-                            <button class="btn btn-link nav-link text-black" name="logout" type="submit">Logout</button>
-                        </form>
-                    </li>
-                </ul>
-            </div>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <form method="POST" action="">
+                        <a class="btn btn-link nav-link float-left" href="shopcart.php"><i class="bi bi-cart text-white"></i></a>
+                        
+                    </form>
+                </li>
+            </ul>
+        </div>
+        <div class="collapse navbar-collapse" id="menuNavbar">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <form method="POST" action="">
+                    <button class="btn btn-link nav-link text-black mx-5" name="logout" type="submit">Logout</button>
+                    </form>
+                </li>
+            </ul>
+        </div>
     </nav>
     <!--<div class="container mt-3">
         <p class="lead">

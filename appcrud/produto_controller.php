@@ -14,7 +14,7 @@ include 'db.php';
 // Função para salvar um novo produto
 function saveProd($nome, $descricao, $marca, $modelo, $valorUnitario, $categoria, $url_img, $ativo) {
     global $conn;
-    $stmt = $conn->prepare("INSERT INTO produtos (nome, descricao, marca, modelo, valorUnitario, categoria, url_img, ativo) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+    $stmt = $conn->prepare("INSERT INTO produtos (nome, descricao, marca, modelo, valorunitario, categoria, url_img, ativo) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
     $stmt->bind_param("ssssdssi", $nome, $descricao, $marca, $modelo, $valorUnitario, $categoria, $url_img, $ativo);
     return $stmt->execute();
 }
@@ -38,8 +38,8 @@ function getProd($id) {
 // Função para atualizar um produto
 function updateProd($id, $nome, $descricao, $marca, $modelo, $valoruUnitario, $categoria, $url_img, $ativo) {
     global $conn;
-    $stmt = $conn->prepare("UPDATE produtos SET nome = ?, descricao = ?, marca = ?, modelo = ?, valorUnitario = ?, categoria = ?, url_img = ?, ativo = ? WHERE id = ?");
-    $stmt->bind_param("ssssdssi", $nome, $descricao, $marca, $modelo, $valorUnitario, $categoria, $url_img, $ativo, $id);
+    $stmt = $conn->prepare("UPDATE produtos SET nome = ?, descricao = ?, marca = ?, modelo = ?, valorunitario = ?, categoria = ?, url_img = ?, ativo = ? WHERE id = ?");
+    $stmt->bind_param("issssdssi", $nome, $descricao, $marca, $modelo, $valorUnitario, $categoria, $url_img, $ativo, $id);
     return $stmt->execute();
 }
 
@@ -56,7 +56,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST['save'])) {
         saveProd($_POST['nome'], $_POST['descricao'], $_POST['marca'], $_POST['modelo'], $_POST['valorunitario'], $_POST['categoria'], $_POST['url_img'], $_POST['ativo']);
     } elseif (isset($_POST['update'])) {
-        updateProd($_POST['id'], $_POST['nome'], $_POST['descricao'], $_POST['marca'], $_POST['modelo'], $_POST['valorUnitario'], $_POST['categoria'], $_post['url_img'], $post_['ativo']);
+        updateProd($_POST['id'], $_POST['nome'], $_POST['descricao'], $_POST['marca'], $_POST['modelo'], $_POST['valorunitario'], $_POST['categoria'], $_POST['url_img'], $_POST['ativo']);
     }
 }
 
