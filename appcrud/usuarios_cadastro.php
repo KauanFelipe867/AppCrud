@@ -1,6 +1,7 @@
 <?php
 include 'usuarios_controller.php';
-include 'header.php';
+include 'navbar.php'; 
+
 
 //Pega todos os usuários para preencher os dados da tabela
 $users = getUsers();
@@ -32,52 +33,69 @@ if (isset($_GET['edit'])) {
     <!-- Insere o JavaScript -->
     <script src="java/main.js"></script>
 
-    <h2 class="ml-5 mt-3 mb-3">Cadastro de Usuários</h2>
-    <form method="POST" action="">
-        <input type="hidden" id="id" name="id" value="<?php echo $userToEdit['id'] ?? ''; ?>">
-        
-        <label for="nome" class = "ml-5">Nome:</label>
-        <input type="text" id="nome" name="nome" value="<?php echo $userToEdit['nome'] ?? ''; ?>" class="rounded border border-dark" required><br><br>
-        
-        <label for="telefone" class = "ml-5">Telefone:</label>
-        <input type="text" id="telefone" name="telefone" value="<?php echo $userToEdit['telefone'] ?? ''; ?>" class="rounded border border-dark" required><br><br>
-        
-        <label for="email" class = "ml-5">Email:</label>
-        <input type="email" id="email" name="email" value="<?php echo $userToEdit['email'] ?? ''; ?>" class="rounded border border-dark" required><br><br>
-        
-        <label for="senha" class = "ml-5">Senha:</label>
-        <input type="password" id="senha" name="senha" class="rounded border border-dark" required><br><br>
-        
-        <button type="submit" class = "btn btn-info ml-5" name="save">Salvar</button>
-        <button type="submit" class = "btn btn-info" name="update">Atualizar</button>
-        <button type="button" class = "btn btn-info" onclick="clearForm()">Novo</button>
-    </form>
+    <h2 class="ml-5 mt-4 mb-3">Cadastro de Usuários</h2>
+        <div class="container mx-5">
+            <form method="POST" action="">
+                <div class="container-fluid">
+                    <input type="hidden" id="id" name="id" value="<?php echo $userToEdit['id'] ?? ''; ?>">
+                </div>
 
-    <h2 class="ml-5 mt-4 mb-4">Usuários Cadastrados</h2>
-    <table border="1" class="mx-5 mb-3">
-        <tr>
-            <th>ID</th>
-            <th>Nome</th>
-            <th>Telefone</th>
-            <th>Email</th>
-            <th>Ações</th>
-        </tr>
-        <!--Faz um loop FOR no resultset de usuários e preenche a tabela-->
-        <?php foreach ($users as $user): ?>
+                <div class="container-fluid">
+                    <label for="nome" class="form-label">Nome:</label>
+                    <input type="text" id="nome" name="nome" class="form-control" value="<?php echo $userToEdit['nome'] ?? ''; ?>" class="rounded border border-dark" required><br><br>
+                </div>
+
+                <div class="container-fluid">
+                    <label for="telefone" class="form-label">Telefone:</label>
+                    <input type="text" id="telefone" name="telefone" class="form-control" value="<?php echo $userToEdit['telefone'] ?? ''; ?>" class="rounded border border-dark" required><br><br>
+                </div>
+
+                <div class="container-fluid">
+                    <label for="email" class="form-label">Email:</label>
+                    <input type="email" id="email" name="email" class="form-control" value="<?php echo $userToEdit['email'] ?? ''; ?>" class="rounded border border-dark" required><br><br>
+                </div>
+
+                <div class="container-fluid">
+                    <label for="senha" class="form-label">Senha:</label>
+                    <input type="password" id="senha" name="senha" class="form-control" class="rounded border border-dark" required><br><br>
+                </div>
+
+                <div class="container-fluid">
+                    <button type="submit" class = "btn btn-info ml-1" name="save">Salvar</button>
+                    <button type="submit" class = "btn btn-info" name="update">Atualizar</button>
+                    <button type="button" class = "btn btn-info" onclick="clearForm()">Novo</button>
+                </div>
+            </form>
+        </div>
+    <h2 class="ml-5 mt-4">Usuários Cadastrados</h2>
+    
+    <div class="container-fluid px-5">
+        <table class="table table-info table-hover my-4">
             <tr>
-                <td><?php echo $user['id']; ?></td>
-                <td><?php echo $user['nome']; ?></td>
-                <td><?php echo $user['telefone']; ?></td>
-                <td><?php echo $user['email']; ?></td>
-                <td>
-                    <a href="?edit=<?php echo $user['id']; ?>">Editar</a>
-                    <a href="?delete=<?php echo $user['id']; ?>" onclick="return confirm('Tem certeza que deseja excluir?');">Excluir</a>
-                </td>
+                <th class="table-primary">ID</th>
+                <th class="table-primary">Nome</th>
+                <th class="table-primary">Telefone</th>
+                <th class="table-primary">Email</th>
+                <th class="table-primary">Ações</th>
             </tr>
-        <?php endforeach; ?>
-    </table>
+            <!--Faz um loop FOR no resultset de usuários e preenche a tabela-->
+            <?php foreach ($users as $user): ?>
+                <tr>
+                    <td><?php echo $user['id']; ?></td>
+                    <td><?php echo $user['nome']; ?></td>
+                    <td><?php echo $user['telefone']; ?></td>
+                    <td><?php echo $user['email']; ?></td>
+                    <td>
+                        <a href="?edit=<?php echo $user['id']; ?>">Editar</a>
+                        <a href="?delete=<?php echo $user['id']; ?>" onclick="return confirm('Tem certeza que deseja excluir?');">Excluir</a>
+                    </td>
+                </tr>
+            <?php endforeach; ?>
+        </table>
+    </div>
+    
    <?php
-   include 'footer.php';
+   include 'footer2.php';
    ?>
 </body>
 </html>

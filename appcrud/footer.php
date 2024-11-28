@@ -1,8 +1,5 @@
-<?php 
-
-?>
-    <footer class="bg-dark text-white d-flex align-items-center rounded-top" style="height: 1cm;">
-        <div class="container text-center rounded-top">
+<footer class="bg-dark text-white d-flex align-items-center fixed-bottom" style="height: 1cm;">
+        <div class="container text-center">
             <p class="mb-0">&copy; <?php echo date("Y"); ?> Seu Nome ou Empresa. Todos os direitos reservados.</p>
         </div>
     </footer>
